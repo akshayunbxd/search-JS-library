@@ -213,6 +213,11 @@ const setCategory = function (e) {
         window.UnbxdAnalyticsConf = {
             page: dataset.id
         };
+        window.unbxdSearch.updateConfig({
+            products: {
+                productType: "CATEGORY"
+            }
+        })
         window.unbxdSearch.getCategoryPage();
     }
 
@@ -394,20 +399,16 @@ if (location.pathname === "/men") {
 }
 
 window.unbxdSearch = new UnbxdSearch({
-    siteKey: "demo-unbxd700181503576558",
-    apiKey: "fb853e3332f2645fac9d71dc63e09ec1",
+    siteKey: "ss-unbxd-betta-prod35741656525409",
+    apiKey: "aed56fa947d16c170c4b66a8e558ec49",
+    // siteKey: "demo-unbxd700181503576558",
+    // apiKey: "fb853e3332f2645fac9d71dc63e09ec1",
     updateUrls: true,
     hashMode: true,
     searchBoxEl: document.getElementById("unbxdInput"),
     searchTrigger: "click",
     searchButtonEl: document.getElementById("searchBtn"),
     unbxdAnalytics: true,
-    // pagination: {
-    //     type: 'INFINITE_SCROLL',
-    //     infiniteScrollTriggerEl: document.getElementById('searchResultsWrapper'),
-    //     // el: document.querySelector("#clickScrollContainer"),
-    //     onPaginate: function (data) { console.log(data, "data") }
-    // },
     allowExternalUrlParams: false,
     setCategoryId: function (param, self) {
         const {
