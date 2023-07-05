@@ -9,24 +9,16 @@ import {
 
 const getProductsPerPage = function(){
     const urlParams = new URLSearchParams(this.options.hashMode ? location.hash.slice(1) : location.search);
-    let productsPerPage;
-    if (this.options.pagination.usePageAndCount) {
-        productsPerPage = Number(urlParams.get('count'));
-    } else {
-        productsPerPage = Number(urlParams.get('rows'));
-    }
-    return productsPerPage;
+    return Number(urlParams.get(this.options.pagination.usePageAndCount ? 'count' :'rows')) || Number(this.options.pagesize.pageSize);
 }
 
 const getCurrentUrlPage = function(){
     const urlParams = new URLSearchParams(this.options.hashMode ? location.hash.slice(1) : location.search);
-    let currentUrlPage;
     if (this.options.pagination.usePageAndCount) {
-        currentUrlPage = Number(urlParams.get('page')) || 1;
+        return Number(urlParams.get('page')) || 1;
     } else {
-        currentUrlPage = Number(urlParams.get('start') / urlParams.get('rows')) + 1;
+        return Number(urlParams.get('start') / getProductsPerPage()) + 1 || 0;
     }
-    return currentUrlPage;
 }
 
 const replaceParamInUrl = function (key, value) {

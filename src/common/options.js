@@ -190,7 +190,7 @@ const options = {
         facetMultilevelName: 'Category',
         multiLevelFacetSelectorClass: 'UNX-multilevel-facet',
         multiLevelFacetTemplate: multiLevelFacetUI,
-        facetDepth: 4,
+        facetDepth: 6,
         clearFacetsSelectorClass: 'UNX-clear-facet',
         removeFacetsSelectorClass: 'UNX-remove-facet',
         onFacetLoad: function (facets) {
@@ -230,6 +230,7 @@ const options = {
         action: 'click',
         pageLimit: 6,
         tagName: "DIV",
+        usePageAndCount: false,
         htmlAttributes: {
             class: "UNX-pagination-size-block"
         },

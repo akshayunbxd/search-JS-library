@@ -4321,7 +4321,7 @@ var options_options = {
     facetMultilevelName: 'Category',
     multiLevelFacetSelectorClass: 'UNX-multilevel-facet',
     multiLevelFacetTemplate: facets_multiLevelFacetUI,
-    facetDepth: 4,
+    facetDepth: 10,
     clearFacetsSelectorClass: 'UNX-clear-facet',
     removeFacetsSelectorClass: 'UNX-remove-facet',
     onFacetLoad: function onFacetLoad(facets) {},
